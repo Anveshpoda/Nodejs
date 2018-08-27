@@ -4,16 +4,14 @@ var router = express.Router();
 var logger = require('../logger')
 var userProfile = require('../mongodb/schemas/userProfile');
 mongoose.promise = global.promise;
-console.log("input");
 
 router.post('/', function (req, res) {
     var input = req.body;
-    console.log("input");
     console.log(input);
     var response = { statusCode: 1, statusMessage: "success" }
     //userValidation(input, response)
     if (response.statusCode != 0) {
-        userProfile.findOne({ firstname: input.firstName }, function (err, userprofile) {
+        userProfile.findOne({ userid: input.userid }, function (err, userprofile) {
             if (err) {
                 return res.status(500).send("There was a problem adding the information to the database.");
             }
@@ -22,7 +20,15 @@ router.post('/', function (req, res) {
                 tempProfile.userId = userprofile._id
                 delete tempProfile._id
                 console.log('Already Registered User');
-                res.json({ statusCode: 1, statusMessage: 'Already Registered User', data: tempProfile })
+                userprofile.mobileNumber = input.mobileNumber
+                userprofile.firstName = input.firstName
+                userprofile.lastName = input.lastName
+                userprofile.password = input.password
+                userprofile.email =input.email
+                userprofile.location = input.location
+                userprofile.profileImage = input.profileImage
+                saveUser(userprofile, res);
+                res.json({ statusCode: 200, statusMessage: 'User Updated', data: tempProfile })
             }
              else {
                 var user = new userProfile({})
@@ -54,12 +60,12 @@ var saveUser = function (userprofile, res) {
     userprofile.save(function (err, userdata) {
         if (err) {
             logger.debug('userprofile save Error');
-            res.json({ statusCode: 0, statusMessage: "something went wrong" })
+            res.json({ statusCode: 500, statusMessage: "something went wrong" })
         }else{
        var tempUserProfile = userprofile.toObject()
        tempUserProfile.userId = userdata._id
        delete tempUserProfile._id
-        res.json({ statusCode: 1, statusMessage: 'New User', data: tempUserProfile })
+        res.json({ statusCode: 200, statusMessage: 'New User', data: tempUserProfile })
     }
     })
 }
@@ -72,4 +78,16 @@ router.get('/users', function (req, res) {
     });
 });
 
+router.post('/login', function (req, res) {
+    var input = req.body
+    console.log(input)
+    userProfile.find({userid : input.userid}, (err, user)=> {
+        if (err) return res.send("There was a problem finding the users.")
+        else if(!user) return  res.json({statusCode: 204, statusMessage: 'User not exist' });
+        else if(user[0].password===input.password)
+                return  res.json({statusCode: 200, statusMessage: 'success' , data:user })
+        else  return  res.json({statusCode: 204, statusMessage: 'username and password not matched' })
+            
+    });
+});
 module.exports = router;

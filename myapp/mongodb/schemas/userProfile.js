@@ -3,11 +3,11 @@ var Schema = mongoose.Schema;
 
 var UserSchema = Schema({  
    mobileNumber :  String,
-   firstName : { type: String,required:true},
+   firstName : { type: String, required:true},
+   userid : { type: String, required:true},
    lastName : String,
    email : String,
    password : String,
-   userid : String,
    location: String,
    profileImage: String,
    createdDateTime: Date,
