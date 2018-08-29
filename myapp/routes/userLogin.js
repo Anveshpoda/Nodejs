@@ -27,8 +27,12 @@ router.post('/', function (req, res) {
                 userprofile.email =input.email
                 userprofile.location = input.location
                 userprofile.profileImage = input.profileImage
-                saveUser(userprofile, res);
-                res.json({ statusCode: 200, statusMessage: 'User Updated', data: tempProfile })
+                userprofile.save().then((user1) => {
+                    res.json({ statusCode: 200, statusMessage: 'User Updated', data: user1 })
+                })
+                .catch((err) => {
+                    res.json({ statusCode: 500, statusMessage: err })
+                })
             }
              else {
                 var user = new userProfile({})
