@@ -10,11 +10,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var userLogin = require('./routes/userLogin')
 
-
 var app = express();
-const cors = require('cors')
-app.use(cors())
-
 const cors = require('cors')
 app.use(cors())
 

@@ -1,0 +1,6 @@
+[2018-09-25T00:28:57.407] [DEBUG] ANVESH - App loaded by PID 11200
+[2018-09-25T00:29:00.158] [DEBUG] ANVESH - Connected to the database successfully.
+[2018-09-25T00:29:32.487] [DEBUG] ANVESH - App loaded by PID 13264
+[2018-09-25T00:29:35.451] [DEBUG] ANVESH - Connected to the database successfully.
+[2018-09-25T00:29:35.691] [DEBUG] ANVESH - Worker 13264 started
+[2018-09-25T00:29:35.691] [DEBUG] ANVESH - Listening on port 8080
