@@ -75,10 +75,10 @@ var saveUser = function (userprofile, res) {
 }
 
 // // RETURNS ALL THE USERS IN THE DATABASE
-router.get('/users', function (req, res) {
-    userProfile.find({}, function (err, users) {
+router.gut('/users', function (req, res) {
+    userProfile.find({}, function (err, user) {
         if (err) return res.status(500).send("There was a problem finding the users.");
-        res.status(200).send(users);
+            res.status(200).send(user);
     });
 });
 

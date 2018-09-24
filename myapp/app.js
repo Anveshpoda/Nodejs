@@ -10,14 +10,19 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var userLogin = require('./routes/userLogin')
 
+
 var app = express();
+const cors = require('cors')
+app.use(cors())
+
 const cors = require('cors')
 app.use(cors())
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'html')
-app.engine('html', ejs.renderFile)
+app.set('view engine', 'ejs');
+// app.set('view engine', 'html')
+// app.engine('html', ejs.renderFile)
 
 app.use(logger('dev'));
 app.use(bodyParser.json())
