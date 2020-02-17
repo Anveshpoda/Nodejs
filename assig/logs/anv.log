@@ -1,0 +1,25 @@
+[2020-02-17T17:30:41.531] [DEBUG] ANVESH - App loaded by PID 789
+[2020-02-17T17:30:44.320] [DEBUG] ANVESH - Connected to the database successfully.
+[2020-02-17T17:30:44.900] [DEBUG] ANVESH - Worker 789 started
+[2020-02-17T17:30:44.901] [DEBUG] ANVESH - Listening on port 8080
+[2020-02-17T17:32:29.715] [DEBUG] ANVESH - App loaded by PID 1333
+[2020-02-17T17:32:31.615] [DEBUG] ANVESH - Connected to the database successfully.
+[2020-02-17T17:32:31.754] [DEBUG] ANVESH - Worker 1333 started
+[2020-02-17T17:32:31.755] [DEBUG] ANVESH - Listening on port 8080
+[2020-02-17T17:35:02.518] [DEBUG] ANVESH - App loaded by PID 1645
+[2020-02-17T17:39:38.868] [DEBUG] ANVESH - App loaded by PID 1998
+[2020-02-17T17:39:42.249] [DEBUG] ANVESH - Connected to the database successfully.
+[2020-02-17T17:39:44.587] [DEBUG] ANVESH - Worker 1998 started
+[2020-02-17T17:39:44.589] [DEBUG] ANVESH - Listening on port 8080
+[2020-02-17T21:35:40.612] [DEBUG] ANVESH - App loaded by PID 6061
+[2020-02-17T21:35:43.462] [DEBUG] ANVESH - Connected to the database successfully.
+[2020-02-17T21:35:44.112] [DEBUG] ANVESH - Worker 6061 started
+[2020-02-17T21:35:44.114] [DEBUG] ANVESH - Listening on port 8080
+[2020-02-17T21:38:08.299] [DEBUG] ANVESH - App loaded by PID 7171
+[2020-02-17T21:38:12.766] [DEBUG] ANVESH - Connected to the database successfully.
+[2020-02-17T21:38:13.002] [DEBUG] ANVESH - Worker 7171 started
+[2020-02-17T21:38:13.004] [DEBUG] ANVESH - Listening on port 8080
+[2020-02-17T21:41:27.216] [DEBUG] ANVESH - App loaded by PID 7792
+[2020-02-17T21:41:29.417] [DEBUG] ANVESH - Connected to the database successfully.
+[2020-02-17T21:41:29.663] [DEBUG] ANVESH - Worker 7792 started
+[2020-02-17T21:41:29.666] [DEBUG] ANVESH - Listening on port 8080
